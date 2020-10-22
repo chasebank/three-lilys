@@ -1,0 +1,69 @@
+$smallScreen: 550px;
+$mediumScreen: 900px; 
+$largeScreen: 1600px;
+$mainPadding: 3rem;
+
+$black: #554f5d;
+$blackDark: #2c2734;
+$purple: #e991ff;
+$purpleDark: #9200b6;
+
+@function between($to, $from, $toWidth, $fromWidth) {
+  $slope: ($to - $from) / ($toWidth - $fromWidth);
+  $base: $from - $slope * $fromWidth;
+
+  @return calc(#{$base} + #{100vw * $slope});
+}
+
+@function between($to, $from, $toWidth, $fromWidth) {
+  $slope: ($to - $from) / ($toWidth - $fromWidth);
+  $base: $from - $slope * $fromWidth;
+
+  @return calc(#{$base} + #{100vw * $slope});
+}
+
+@mixin responsive-property(
+  $property,
+  $fromValue,
+  $toValue,
+  $fromBp: 550px,
+  $toBp: 980px
+) {
+
+  $fromValues: ();
+  $betweenValues: ();
+  $toValues: ();
+
+  @for $i from 1 through length( $fromValue ) {
+    $fv: nth( $fromValue, $i );
+    $tv: nth( $toValue, $i );
+
+    $bv: $fv;
+    $bvf: false;
+    $bvt: false;
+
+    @if ( type-of( $fv ) == "number" and not unitless( $fv ) and unit( $fv ) != "%" ) {
+      $fv: if( unit( $fv ) != "px", ( $fv / ( $fv * 0 + 1 ) * 16 ) * 1px, $fv );
+        $bvf: $fv;
+    }
+    @if ( type-of( $tv ) == "number" and not unitless( $tv ) and unit( $tv ) != "%" ) {
+      $tv: if( unit( $tv ) != "px", ( $tv / ( $tv * 0 + 1 ) * 16 ) * 1px, $tv );
+      $bvt: $tv;
+    }
+    @if ( $bvf != false and $bvt != false ) {
+      $bv: between( $bvf, $bvt, $fromBp, $toBp );
+    }
+
+    $fromValues: append( $fromValues, $fv );
+    $betweenValues: append( $betweenValues, $bv );
+    $toValues: append( $toValues, $tv );
+  }
+
+  #{$property}: $fromValues;
+  @media screen and (min-width: #{$fromBp}) {
+    #{$property}: $betweenValues;
+  }
+  @media screen and (min-width: #{$toBp}) {
+    #{$property}: $toValues;
+  }
+}

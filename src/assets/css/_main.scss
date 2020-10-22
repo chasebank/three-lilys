@@ -1,0 +1,155 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  // background-color: cyan;
+  background: url("assets/images/three-lilys--bg.jpg") right top / auto 100% no-repeat;
+  min-height: 100%;
+  overflow-x: hidden;
+  // force scrollbar to prevent jump
+  overflow-y: scroll;
+  display: grid;
+
+  > * {
+    grid-area: 1 / 1;
+  }
+
+  background-position: 100%;
+  @supports(left: unquote('max(0px)')) {
+    $max: unquote('max(100%,calc(100% + (1000px - 60vw)))');
+    background-position: clamp(#{$max}, 100vw, 100%);
+  }
+}
+
+main {
+  // background-color: magenta;
+  display: grid;
+  grid-template-columns: 50% 1fr;
+  place-items: center left;
+  grid-row-gap: 0px;
+  padding: 0 2vw;
+
+  > * {
+    grid-column: 1;
+  }
+}
+
+section {
+  // background-color: yellow;
+  justify-self: center;
+  position: relative;
+  // width: 80%;
+  min-width: 60%;
+  padding: calc(36px + 2rem);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+#torn-edges {
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:-1;
+  filter:
+    drop-shadow(0 1rem 2rem rgba(black,.5))
+    drop-shadow(0 .5rem .2rem rgba(black,.25))
+}
+
+
+
+
+.social-links-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.5rem;
+}
+
+.social-link--li {
+  + li {
+    margin-top: .5em;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.social-link--icon--wrap {
+  display: inline-flex;
+  --size: 3em;
+  --nth: 0;
+  width: var(--size);
+  height: var(--size);
+  margin-right: .75em;
+  filter:
+    drop-shadow(0 .1em .05em rgba(black,.2))
+    drop-shadow(0 .1em .2em rgba(black,.2));
+  image-rendering: crisp-edges;
+  
+  .social-link--icon {
+    flex: 1;
+    background: url("assets/images/social-media-icons--sprite.jpg") center calc(#{var(--size)} * #{var(--nth)} * -1) no-repeat;
+    background-size: var(--size);
+    mask-image: url("assets/images/social-media-icons--alpha-mask.png");
+    mask-size: 100% 100%;
+    
+    &--twitter {
+      --nth: 2;
+    }
+
+    &--facebook {
+      --nth: 3;
+    }
+
+    &--etsy {
+      --nth: 1;
+    }
+
+    &--contact {
+      --nth: 4;
+    }
+  }
+}
+
+.social-link {
+  filter: drop-shadow(0 0 1rem white);
+  text-shadow:
+    0px -1px 3px rgba(white,.5),
+    0px -2px 6px  rgba(white,1),
+    0px -2px 10px  rgba(white,1)
+}
+
+
+
+
+@media (max-width: $mediumScreen) {
+  body {
+    background-color: black;
+    background-size: auto 200vw;
+    background-position: -110vw -40vw;
+  }
+
+  main {
+    grid-template-columns: 100%;
+    place-items: start center;
+    padding-top: 120vw
+  }
+
+  section {
+    width: 100%;
+  }
+}

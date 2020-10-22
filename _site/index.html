@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Theme Color for Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#3c64ff">
+
+    <!-- Short description of the document (limit to 150 characters) -->
+    <!-- This content *may* be used as a part of search engine results. -->
+    <meta name="description" content="Bespoke Gifts & Décor">
+
+    <meta property="og:url" content="http://www.threelilys.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Three Lilys">
+    <meta property="og:image" content="http://www.threelilys.com/assets/images/three-lilys--thumbnail.jpg">
+    <meta property="og:image:alt" content="Three Lilys Logo">
+    <meta property="og:description" content="Bespoke Gifts & Décor">
+    <meta property="og:site_name" content="Three Lilys Logo">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="314">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="http://www.threelilys.com">
+    <meta name="twitter:title" content="Three Lilys">
+    <meta name="twitter:description" content="Bespoke Gifts & Décor">
+    <meta name="twitter:image" content="http://www.threelilys.com/assets/images/three-lilys--thumbnail.jpg">
+    <meta name="twitter:image:alt" content="Three Lilys Logo. Please visit our website.">
+
+    <!--  Essential META Tags -->
+    <meta property="og:title" content="Three Lilys">
+    <meta property="og:description" content="Bespoke Gifts & Décor">
+    <meta property="og:image" content="http://www.threelilys.com/assets/images/three-lilys--thumbnail.jpg">
+    <meta property="og:url" content="http://www.threelilys.com">
+
+    <!--  Non-Essential, But Recommended -->
+    <meta property="og:site_name" content="Three Lilys">
+    <meta name="twitter:image:alt" content="Visit our website">
+    
+    <title>Three Lilys</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="torn-edges" width="100%" height="100%" aria-hidden="true">
+  <defs>
+    <image id="torn-edge" width="600" height="37" xlink:href="assets/images/torn-edge-mask.jpg" />
+
+    <pattern id="pattern--torn-edge--top" patternUnits="userSpaceOnUse" width="600" height="37">
+      <use xlink:href="#torn-edge" transform="translate(0,1)"/>
+    </pattern>
+
+    <pattern id="pattern--torn-edge--bottom" patternUnits="userSpaceOnUse" width="600" height="37">
+      <use xlink:href="#torn-edge" transform="translate(600,36) rotate(-180,0,0)"/>
+    </pattern>
+
+    <pattern id="pattern--torn-edge--right" patternUnits="userSpaceOnUse" width="37" height="600">
+      <use xlink:href="#torn-edge" transform="translate(36,0) rotate(90,0,0)"/>
+    </pattern>
+
+    <pattern id="pattern--torn-edge--left" patternUnits="userSpaceOnUse" width="37" height="600">
+      <use xlink:href="#torn-edge" transform="translate(1,600) rotate(-90,0,0)"/>
+    </pattern>
+
+    <pattern id="pattern--fogged-glass" patternUnits="userSpaceOnUse" width="800" height="800">
+      <image width="800" height="800" xlink:href="assets/images/fogged-glass-mask.png" />
+    </pattern>
+
+    <mask id="mask--torn--top-bottom">
+      <rect width="100%" height="100%" fill="white"/>
+      <rect width="100%" height="37" transform="translate(0,-1)" fill="url(#pattern--torn-edge--top)"/>
+      <svg y="100%" style="overflow:visible;shape-rendering:crispEdges">
+        <rect width="100%" height="37" transform="translate(0,-36)" fill="url(#pattern--torn-edge--bottom)"/>
+      </svg>
+    </mask>
+
+    <mask id="mask--torn--left-right">
+      <rect width="100%" height="100%" fill="white"/>
+      <svg x="100%" style="overflow:visible;shape-rendering:crispEdges">
+        <rect width="37" height="100%" transform="translate(-36,0)" fill="url(#pattern--torn-edge--right)"/>
+      </svg>
+      <svg style="overflow:visible">
+        <rect width="37" height="100%" transform="translate(-1,0)" fill="url(#pattern--torn-edge--left)"/>
+      </svg>
+    </mask>
+
+    <mask id="mask--fogged-glass">
+      <rect width="100%" height="100%" fill="url(#pattern--fogged-glass)"/>
+    </mask>
+  </defs>
+
+  <svg mask="url(#mask--fogged-glass)">
+    <svg mask="url(#mask--torn--left-right)">
+      <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" fill="white" mask="url(#mask--torn--top-bottom)"/>
+    </svg>
+  </svg>
+</svg>
+
+  <h2>Bespoke Gifts & Décor</h2>
+
+  <h3>Connect with us online</h3>
+
+  <ul class="social-links-list">
+    <li class="social-link--li">
+      <a href="" title="Visit Three Lilys on Etsy">
+        <span class="social-link--icon--wrap" role="img" aria-hidden="true">
+          <span class="social-link--icon social-link--icon--etsy" role="img" aria-hidden="true"></span>
+        </span>
+        <span class="social-link">Etsy</span>
+      </a>
+    </li>
+    <li class="social-link--li">
+      <a href="" target="_blank" title="Visit Three Lilys on Facebook">
+        <span class="social-link--icon--wrap" role="img" aria-hidden="true">
+          <span class="social-link--icon social-link--icon--facebook" role="img" aria-hidden="true"></span>
+        </span>
+        <span class="social-link">Facebook</span>
+      </a>
+    </li>
+    <li class="social-link--li">
+      <a href="" target="_blank" title="Visit Three Lilys on Instagram">
+        <span class="social-link--icon--wrap" role="img" aria-hidden="true">
+          <span class="social-link--icon social-link--icon--instagram" role="img" aria-hidden="true"></span>
+        </span>
+        <span class="social-link">Instagram</span>
+      </a>
+    </li>
+    
+    <li class="social-link--li">
+      <a href="" title="Contact us">
+        <span class="social-link--icon--wrap" role="img" aria-hidden="true">
+          <span class="social-link--icon social-link--icon--contact"></span>
+        </span>
+        <span class="social-link">Contact</span>
+      </a>
+    </li>
+  </ul>
+</section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

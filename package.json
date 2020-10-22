@@ -1,0 +1,26 @@
+{
+  "name": "three-lilys",
+  "description": "Eleventy static site for threelilys.com",
+  "tags": [
+    "eleventy",
+    "11ty",
+    "ssr",
+    "static",
+    "glitch",
+    "template"
+  ],
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=0.12"
+  },
+  "scripts": {
+    "set-domain": "echo \"www.threelilys.com\" > _site/CNAME",
+    "build": "env NODE_ENV=production npx eleventy --pathprefix 'three-lilys' && npm run set-domain",
+    "start": "eleventy --serve"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "eleventy-plugin-sass": "^1.1.1"
+  },
+  "license": "MIT"
+}

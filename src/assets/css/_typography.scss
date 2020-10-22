@@ -1,0 +1,67 @@
+@import 'https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Merriweather&display=swap';
+
+:root {
+  @include responsive-property(font-size, 16px, 22px);
+}
+
+body {
+  font-family: 'Merriweather', serif;
+  color: $blackDark;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Kaushan Script', cursive;
+  filter: drop-shadow(0 0 1rem white);
+  text-shadow:
+    0px -1px 3px rgba(white,.5),
+    0px -2px 6px  rgba(white,1),
+    0px -2px 10px  rgba(white,1);
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+h1 {
+  // background-color: red;
+  font-size: 5rem;
+  letter-spacing: -.25rem;
+  line-height: .85;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+// h2 + h3 {
+//   margin-top: 0;
+// }
+
+h3 {
+  margin: 0;
+}
+
+a:link {
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+  transition-property:
+    color,
+    text-decoration-color;
+}
+
+a:link,
+a:visited {
+  color: $blackDark;
+  text-decoration-color: $purple;
+}
+
+a:hover {
+  color: $purpleDark;
+  text-decoration-color: $black;
+//   text-shadow:
+//     0px -1px 3px rgba(white,.5),
+//     0px -2px 6px  rgba($discordLinkGlowColor,1),
+//     0px -2px 10px  rgba($discordLinkGlowColor,1)
+}

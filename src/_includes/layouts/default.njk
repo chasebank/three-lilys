@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Theme Color for Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#3c64ff">
+
+    <!-- Short description of the document (limit to 150 characters) -->
+    <!-- This content *may* be used as a part of search engine results. -->
+    <meta name="description" content="Bespoke Gifts & Décor">
+
+    <meta property="og:url" content="http://www.threelilys.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Three Lilys">
+    <meta property="og:image" content="http://www.threelilys.com/assets/images/three-lilys--thumbnail.jpg">
+    <meta property="og:image:alt" content="Three Lilys Logo">
+    <meta property="og:description" content="Bespoke Gifts & Décor">
+    <meta property="og:site_name" content="Three Lilys Logo">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="314">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="http://www.threelilys.com">
+    <meta name="twitter:title" content="Three Lilys">
+    <meta name="twitter:description" content="Bespoke Gifts & Décor">
+    <meta name="twitter:image" content="http://www.threelilys.com/assets/images/three-lilys--thumbnail.jpg">
+    <meta name="twitter:image:alt" content="Three Lilys Logo. Please visit our website.">
+
+    <!--  Essential META Tags -->
+    <meta property="og:title" content="Three Lilys">
+    <meta property="og:description" content="Bespoke Gifts & Décor">
+    <meta property="og:image" content="http://www.threelilys.com/assets/images/three-lilys--thumbnail.jpg">
+    <meta property="og:url" content="http://www.threelilys.com">
+
+    <!--  Non-Essential, But Recommended -->
+    <meta property="og:site_name" content="Three Lilys">
+    <meta name="twitter:image:alt" content="Visit our website">
+    
+    <title>{{ pageTitle or siteData.name }}</title>
+    <link rel="stylesheet" href="{{ 'styles.css' | url }}" />
+  </head>
+  <body>
+    <main>
+      {{ content | safe }}
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

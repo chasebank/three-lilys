@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="torn-edges" width="100%" height="100%" aria-hidden="true">
+  <defs>
+    <image id="torn-edge" width="600" height="37" xlink:href="assets/images/torn-edge-mask.jpg" />
+
+    <pattern id="pattern--torn-edge--top" patternUnits="userSpaceOnUse" width="600" height="37">
+      <use xlink:href="#torn-edge" transform="translate(0,1)"/>
+    </pattern>
+
+    <pattern id="pattern--torn-edge--bottom" patternUnits="userSpaceOnUse" width="600" height="37">
+      <use xlink:href="#torn-edge" transform="translate(600,36) rotate(-180,0,0)"/>
+    </pattern>
+
+    <pattern id="pattern--torn-edge--right" patternUnits="userSpaceOnUse" width="37" height="600">
+      <use xlink:href="#torn-edge" transform="translate(36,0) rotate(90,0,0)"/>
+    </pattern>
+
+    <pattern id="pattern--torn-edge--left" patternUnits="userSpaceOnUse" width="37" height="600">
+      <use xlink:href="#torn-edge" transform="translate(1,600) rotate(-90,0,0)"/>
+    </pattern>
+
+    <pattern id="pattern--fogged-glass" patternUnits="userSpaceOnUse" width="800" height="800">
+      <image width="800" height="800" xlink:href="assets/images/fogged-glass-mask.png" />
+    </pattern>
+
+    <mask id="mask--torn--top-bottom">
+      <rect width="100%" height="100%" fill="white"/>
+      <rect width="100%" height="37" transform="translate(0,-1)" fill="url(#pattern--torn-edge--top)"/>
+      <svg y="100%" style="overflow:visible;shape-rendering:crispEdges">
+        <rect width="100%" height="37" transform="translate(0,-36)" fill="url(#pattern--torn-edge--bottom)"/>
+      </svg>
+    </mask>
+
+    <mask id="mask--torn--left-right">
+      <rect width="100%" height="100%" fill="white"/>
+      <svg x="100%" style="overflow:visible;shape-rendering:crispEdges">
+        <rect width="37" height="100%" transform="translate(-36,0)" fill="url(#pattern--torn-edge--right)"/>
+      </svg>
+      <svg style="overflow:visible">
+        <rect width="37" height="100%" transform="translate(-1,0)" fill="url(#pattern--torn-edge--left)"/>
+      </svg>
+    </mask>
+
+    <mask id="mask--fogged-glass">
+      <rect width="100%" height="100%" fill="url(#pattern--fogged-glass)"/>
+    </mask>
+  </defs>
+
+  <svg mask="url(#mask--fogged-glass)">
+    <svg mask="url(#mask--torn--left-right)">
+      <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" fill="white" mask="url(#mask--torn--top-bottom)"/>
+    </svg>
+  </svg>
+</svg>
