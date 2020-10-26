@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="torn-edges" width="100%" height="100%" aria-hidden="true">
   <defs>
-    <image id="torn-edge" width="600" height="37" xlink:href="assets/images/torn-edge-mask.jpg" />
+    <image id="torn-edge" width="600" height="37" xlink:href="/assets/images/torn-edge-mask.jpg" />
 
     <pattern id="pattern--torn-edge--top" patternUnits="userSpaceOnUse" width="600" height="37">
       <use xlink:href="#torn-edge" transform="translate(0,1)"/>
@@ -19,7 +19,7 @@
     </pattern>
 
     <pattern id="pattern--fogged-glass" patternUnits="userSpaceOnUse" width="800" height="800">
-      <image width="800" height="800" xlink:href="assets/images/fogged-glass-mask.png" />
+      <image width="800" height="800" xlink:href="/assets/images/fogged-glass-mask.png" />
     </pattern>
 
     <mask id="mask--torn--top-bottom">
@@ -45,9 +45,24 @@
     </mask>
   </defs>
 
-  <svg mask="url(#mask--fogged-glass)">
-    <svg mask="url(#mask--torn--left-right)">
+  <svg mask="url(#mask--fogged-glass)" width="100%" height="100%">
+    <svg mask="url(#mask--torn--left-right)" width="100%" height="100%">
       <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" fill="white" mask="url(#mask--torn--top-bottom)"/>
     </svg>
   </svg>
 </svg>
+
+<script>
+  {# force repaint of svg el when content (wufoo form) changes - other methods weren't working #}
+  var elSvgParent = document.getElementById(`torn-edges`).parentElement;
+
+  const resizeObserver = new ResizeObserver(entries => {
+    let el = entries.shift().target,
+        elSvg = document.getElementById(`torn-edges`),
+        clone = elSvg.cloneNode(true);
+    
+    el.replaceChild(clone,elSvg);
+  });
+
+  resizeObserver.observe(elSvgParent);
+</script>

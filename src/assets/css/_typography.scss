@@ -2,12 +2,12 @@
 @import 'https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Merriweather&display=swap';
 
 :root {
-  @include responsive-property(font-size, 16px, 22px);
+  font-size: clamp(1rem, 1.5vw, calc(1.5rem + 1.5vw));
 }
 
 body {
   font-family: 'Merriweather', serif;
-  color: $blackDark;
+  color: $black;
 }
 
 h1,
@@ -26,13 +26,9 @@ h2 {
   text-align: center;
 }
 
-h1 {
-  // background-color: red;
-  font-size: 5rem;
-  letter-spacing: -.25rem;
-  line-height: .85;
-  margin-top: 0;
-  margin-bottom: 2rem;
+h1,
+h2 {
+  font-size: 1.75rem;
 }
 
 // h2 + h3 {
