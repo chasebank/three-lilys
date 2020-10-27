@@ -6,7 +6,7 @@ pageTitle: Three Lilys - Contact
 <section class="contact-page">
   {% include "tornedges.njk" %}
 
-  <span class="social-link--icon--wrap" role="img" aria-hidden="true">
+  <span class="social-link--icon--wrap" role="img" aria-hidden="true" focusable="false">
     <span class="social-link--icon social-link--icon--contact"></span>
   </span>
 
@@ -47,4 +47,39 @@ pageTitle: Three Lilys - Contact
 
   (document, 'script');
   </script>
+
+  <ul class="social-links-list">
+    <li class="social-link--li">
+      <a href="https://www.etsy.com/shop/ThreeLilysBoutique" title="Visit Three Lilys on Etsy">
+        <span class="social-link--icon--wrap" role="img" aria-hidden="true" focusable="false">
+          <span class="social-link--icon social-link--icon--etsy"></span>
+        </span>
+        <span class="screen-reader-only">Etsy</span>
+      </a>
+    </li>
+    <li class="social-link--li">
+      <a href="https://www.facebook.com/threelilys" target="_blank" title="Visit Three Lilys on Facebook">
+        <span class="social-link--icon--wrap" role="img" aria-hidden="true" focusable="false">
+          <span class="social-link--icon social-link--icon--facebook"></span>
+        </span>
+        <span class="screen-reader-only">Facebook</span>
+      </a>
+    </li>
+    <li class="social-link--li">
+      <a href="https://www.instagram.com/threelilys" target="_blank" title="Visit Three Lilys on Instagram">
+        <span class="social-link--icon--wrap" role="img" aria-hidden="true" focusable="false">
+          <span class="social-link--icon social-link--icon--instagram"></span>
+        </span>
+        <span class="screen-reader-only">Instagram</span>
+      </a>
+    </li>
+    {# <li class="social-link--li">
+      <a href="" target="_blank" title="Visit Three Lilys on Twitter">
+        <span class="social-link--icon--wrap" role="img" aria-hidden="true" focusable="false">
+          <span class="social-link--icon social-link--icon--twitter"></span>
+        </span>
+        <span class="screen-reader-only">Twitter</span>
+      </a>
+    </li> #}
+  </ul>
 </section>

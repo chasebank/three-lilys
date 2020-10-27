@@ -63,8 +63,8 @@ section {
 
   &.contact-page {
     align-items: stretch;
-    // padding: 0px 0px calc(36px + 2rem) 0px;
-    padding: calc(36px + 2rem) 0 0 0;
+    // padding: 0px 0px $tornEdgePadding 0px;
+    padding: $tornEdgePadding 0 0 0;
   }
 }
 
@@ -79,6 +79,24 @@ section {
 
   h1 {
     // margin-bottom: 0;
+  }
+
+  .social-links-list {
+    display: flex;
+    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: $tornEdgePadding;
+    // margin-top: $tornEdgePadding
+
+    .social-link--icon--wrap {
+      --size: 2.5rem;
+    }
+  }
+
+  .social-link--li {
+    margin-top: 0;
   }
 }
 
