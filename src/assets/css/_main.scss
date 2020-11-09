@@ -17,19 +17,21 @@ body {
   // force scrollbar to prevent jump
   overflow-y: scroll;
 
-  padding: 2.5vw;
+  padding: 2.5vw 0;
+  padding: 0;
   display: grid;
 
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: top right;
   background-attachment: fixed;
-  
-  background-position: 100%;
-  @supports(left: unquote('max(0px)')) {
-    $maxPos: unquote('max(100%,calc(100% + (440px - 40vw)))');
-    background-position: clamp(#{$maxPos}, 100vw, 100%);
-  }
+
+  background-position: clamp(calc((400px - 40vw)), 100vw, 100%);
+  background-position: clamp(
+    100%,
+    100vw,
+    calc(100% + (525px - 25vw))
+  );
 }
 
 main {
@@ -50,7 +52,7 @@ section {
   justify-self: center;
   position: relative;
   width: 80%;
-  min-width: 60%;
+  min-width: 300px;
   padding: calc(36px + 1.5rem);
 
   display: flex;
@@ -59,15 +61,12 @@ section {
 
   &.contact-page {
     align-items: stretch;
-    // padding: 0px 0px $tornEdgePadding 0px;
     padding: $tornEdgePadding 0 0 0;
   }
 }
 
 .contact-page {
   .social-link--icon--wrap {
-    // position: relative;
-    // display: inline-block;
     --size: 6rem;
     align-self: center;
     margin-right: 0;
@@ -80,6 +79,7 @@ section {
     align-items: center;
     margin-top: 0;
     margin-bottom: $tornEdgePadding;
+    padding: 0;
 
     .social-link--icon--wrap {
       --size: 2.5rem;
@@ -175,9 +175,28 @@ section {
 
 
 
-@media (max-width: $smallScreen) {
+@media (min-width: $smallScreen) and (orientation: portrait) {
+  $size: calc(768px - 150vw);
+  $size: 100vh;
+  $bgsize: calc(#{$size} * .6);
   body {
     background-color: black;
+    background-size: $size auto;
+    background-image:
+      linear-gradient(to bottom, rgba(black,0) $bgsize, rgba(black,1) calc(#{$bgsize} * 1.1)),
+      url('/assets/images/three-lilys--bg.jpg');
+    background-position: 50% -20vw;
+  }
+  
+  main {
+    grid-template-columns: 100%;
+    place-items: start center;
+    padding-top: 40vh;
+  }
+}
+
+@media (max-width: $smallScreen) {
+  body {
     $size: calc(1600px - 150vw);
     background-size: $size auto;
     $bgsize: calc(#{$size} * .45);
@@ -196,8 +215,5 @@ section {
     place-items: start center;
     padding-top: calc(800px - 80vw);
   }
-
-  section {
-    width: 100%;
-  }
 }
+
