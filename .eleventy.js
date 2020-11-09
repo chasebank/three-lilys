@@ -9,6 +9,15 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("src/assets/images");
   eleventyConfig.addPassthroughCopy("src/script.js");
+
+  const faviconFiles = [
+    `src/*.png`,
+    `src/browserconfig.xml`,
+    `src/favicon.ico`,
+    `src/site.webmanifest`
+  ]
+
+  faviconFiles.forEach((file) => eleventyConfig.addPassthroughCopy(file))
  
   return {
     dir: {
